@@ -1,0 +1,42 @@
+class ArbolPersonas {
+    // 3.1
+    public void insertar(Persona persona) {
+        raiz = insertarRec(raiz, persona);
+    }
+    
+    private void insertarRec(Nodo nodo, Persona persona) {
+        if (nodo == null) {
+            nodo = new Nodo(persona); 
+        } else {
+            
+            String NodoRut = nodo.persona.rut;
+            String PersonaRut = persona.rut;
+            
+            if (NodoRut.compareTo(PersonaRut) > 0) {
+                insertarRec(nodo.izquierdo, persona);
+            } else {
+                insertarRec(nodo.derecho, persona);
+            }
+        }
+    }
+    
+    // 3.2
+    public int sumaEdadesUnSoloHijo() {
+        return sumaEdadesUnSoloHijoRec(raiz);
+    }
+    
+    private int sumaEdadesUnSoloHijoRec(Nodo nodo) {
+        int suma = 0;
+        if (nodo != null) {
+            
+            suma += sumaEdadesUnSoloHijoRec(nodo.izquierdo);
+            suma += sumaEdadesUnSoloHijoRec(nodo.derecho);
+            
+            if ( (nodo.izquierdo == null && nodo.derecho != null)||(nodo.izquierdo != null && nodo.derecho == null) ) {
+                return suma + nodo.persona.edad;
+            }
+            
+        }
+        return suma;
+    }
+}
