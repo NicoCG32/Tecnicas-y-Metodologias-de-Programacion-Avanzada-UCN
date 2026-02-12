@@ -7,6 +7,6 @@ class Main {
         
         int mid = (inicio + fin) / 2;
         
-        return multiplicarImpares(arr, inicio, mid) * multiplicarImpares(arr, mid + 1, fin)
+        return multiplicarImpares(arr, inicio, mid) * multiplicarImpares(arr, mid + 1, fin);
     }
 }

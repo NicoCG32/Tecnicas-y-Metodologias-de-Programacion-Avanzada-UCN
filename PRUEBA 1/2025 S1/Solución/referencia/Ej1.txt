@@ -9,7 +9,7 @@ class Main {
         
         while (valor <= 0) {
             System.out.println("Ingrese un número positivo: ");
-            int valor = Integer.valueOf(sc.nextLine());
+            valor = Integer.valueOf(sc.nextLine());
         }
         
         int suma = sumaDigitos(valor);

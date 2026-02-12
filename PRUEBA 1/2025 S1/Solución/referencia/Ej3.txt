@@ -4,20 +4,21 @@ class ArbolPersonas {
         raiz = insertarRec(raiz, persona);
     }
     
-    private void insertarRec(Nodo nodo, Persona persona) {
+    private Nodo insertarRec(Nodo nodo, Persona persona) {
         if (nodo == null) {
-            nodo = new Nodo(persona); 
+            return new Nodo(persona); 
         } else {
             
             String NodoRut = nodo.persona.rut;
             String PersonaRut = persona.rut;
             
             if (NodoRut.compareTo(PersonaRut) > 0) {
-                insertarRec(nodo.izquierdo, persona);
+                nodo.izquierdo = insertarRec(nodo.izquierdo, persona);
             } else {
-                insertarRec(nodo.derecho, persona);
+                nodo.derecho = insertarRec(nodo.derecho, persona);
             }
         }
+        return nodo;
     }
     
     // 3.2
