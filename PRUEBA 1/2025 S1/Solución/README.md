@@ -144,7 +144,7 @@ Solución/
 
 - Ingresa un número (ej: 123) y presiona Enter
 
-### Nota Importante
+### Notas Importantes
 Este examen fue realizado de forma presencial en papel, por lo que esta es una **solución anterior a la entrega real**. Los archivos de referencia en `referencia/` corresponden a las soluciones parciales escritas en la prueba.
 
 ## Estado

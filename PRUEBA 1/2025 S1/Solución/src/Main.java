@@ -52,6 +52,7 @@ public class Main {
         int suma = SumaDigitos.sumaDigitos(valor);
         System.out.println("La suma de los dígitos es: " + suma);
         System.out.println();
+        sc.close();
     }
     
     /**
