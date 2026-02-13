@@ -18,32 +18,42 @@ Solución/
 
 ## Cómo Cargar y Ejecutar en Eclipse
 
-### Opción 1: Importar como Proyecto Existente
+### Ubicación en el Repositorio
+Este código se encuentra en: `Técnicas y Metodologías de Prog. Avanz/PRUEBA 1/2024 S2/Solución/src/`
 
-1. **Crear una carpeta del proyecto:**
-   - Copia toda la carpeta Solución/ a una ubicación accesible
-   - Renómbrala a algo más descriptivo
+### Opción Recomendada: Copiar la Carpeta `src/`
 
-2. **Abrir Eclipse y crear un nuevo proyecto Java:**
-   - File  New  Java Project
-   - Sol project contents: Create from existing source
-   - Browse  Selecciona la carpeta que copiaste
+1. **Obtener los archivos fuente:**
+   - Descarga o clona el repositorio `Programacion-Avanzada`
+   - Navega a `Técnicas y Metodologías de Prog. Avanz/PRUEBA 1/2024 S2/Solución/`
+   - Copia SOLO la carpeta `src/` a tu computadora
+
+2. **En Eclipse, crear un nuevo proyecto Java:**
+   - `File` → `New` → `Java Project`
+   - Nombre: `Prueba1_TecMetProg`
+   - Selecciona `Create from existing source`
+   - Browse → Apunta a la carpeta `src/` que copiaste
    - Finish
 
-3. **Eclipse detectará automáticamente la carpeta src/**
+3. **Ejecutar el programa:**
+   - Clic derecho en `main.java`
+   - `Run As` → `Java Application`
 
-4. **A medida que implementes soluciones:**
-   - Agrega tus archivos Java en la carpeta src/
-   - Eclipse los compilará automáticamente
+### Opción Alternativa: Copiar Archivos Manualmente
 
-### Opción 2: Copiar Archivos Manualmente
+1. **Crear un nuevo proyecto Java en Eclipse:**
+   - `File` → `New` → `Java Project` → Nombre: `Prueba1_TecMetProg` → Finish
 
-1. **Crear proyecto Java en Eclipse:**
-   - File  New  Java Project  Finish
+2. **Copiar los archivos `.java`:**
+   - Abre el Explorador de archivos
+   - Ve a `Técnicas y Metodologías de Prog. Avanz/PRUEBA 1/2024 S2/Solución/src/`
+   - Selecciona todos los archivos `.java`
+   - Cópialos y pégalos en la carpeta `src/` de tu proyecto en Eclipse
+   - Eclipse pedirá confirmación → Clic "Yes to All"
 
-2. **Copiar archivos a src/:**
-   - A medida que implementes, copia los archivos .java a src/
-   - Eclipse los detectará automáticamente
+3. **Ejecutar:**
+   - Clic derecho en `main.java`
+   - `Run As` → `Java Application`
 
 ### Nota
 **Estado:** Esta solución aún está por implementar. La carpeta src/ está lista para que agregues tus archivos Java.
