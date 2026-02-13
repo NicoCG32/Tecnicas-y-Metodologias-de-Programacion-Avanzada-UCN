@@ -74,75 +74,43 @@ Solución/
 
 ## Cómo Cargar y Ejecutar en Eclipse
 
-### Opción 1: Importar como Proyecto Existente
+### Ubicación en el Repositorio
+Este código se encuentra en: `Técnicas y Metodologías de Prog. Avanz/PRUEBA 1/2025 S1/Solución/src/`
 
-1. **Crear una carpeta del proyecto:**
-   - Copia toda la carpeta `Solución/` a una ubicación accesible
-   - Renómbrala a algo más descriptivo, ej: `Prueba1_TecMetProg`
+### Opción Recomendada: Copiar la Carpeta `src/`
 
-2. **Abrir Eclipse y crear un nuevo proyecto Java:**
-   - `File` → `New` → `Java Project`
-   - Nombre del proyecto: `Prueba1_TecMetProg`
-   - Sol project contents: `Create from existing source`
-   - Browse → Selecciona la carpeta que copiaste
-   - Finish
+1. **Obtener los archivos fuente:**
+	- Descarga o clona el repositorio `Programacion-Avanzada`
+	- Navega a `Técnicas y Metodologías de Prog. Avanz/PRUEBA 1/2025 S1/Solución/`
+	- Copia SOLO la carpeta `src/` a tu computadora
 
-3. **Lo que Eclipse debería detectar:**
-   - Una carpeta `src/` con los 6 archivos Java
-   - Eclipse automáticamente compilará los archivos
+2. **En Eclipse, crear un nuevo proyecto Java:**
+	- `File` → `New` → `Java Project`
+	- Nombre: `Prueba1_TecMetProg`
+	- Selecciona `Create from existing source`
+	- Browse → Apunta a la carpeta `src/` que copiaste
+	- Finish
 
-4. **Ejecutar el programa:**
-   - Click derecho en `Main.java` en el Project Explorer
-   - `Run As` → `Java Application`
+3. **Ejecutar el programa:**
+	- Clic derecho en `Main.java`
+	- `Run As` → `Java Application`
+	- Deberías ver el menú de opciones en la consola
 
-### Opción 2: Importar la Carpeta `src/` Directamente
+### Opción Alternativa: Copiar Archivos Manualmente
 
-1. **En Eclipse, crear un nuevo Java Project:**
-   - `File` → `New` → `Java Project`
-   - Nombre: `Prueba1_TecMetProg`
-   - Finish
+1. **Crear un nuevo proyecto Java en Eclipse:**
+	- `File` → `New` → `Java Project` → Nombre: `Prueba1_TecMetProg` → Finish
 
-2. **Copiar archivos fuente:**
-   - En el Project Explorer, expande el proyecto
-   - Click derecho en la carpeta `src/` (dentro del proyecto)
-   - `Import` → `File System`
-   - Selecciona la carpeta `src/` de esta solución
-   - Finish
-
-3. **Ejecutar:**
-   - Click derecho en `Main.java`
-   - `Run As` → `Java Application`
-
-### Opción 3: Copiar y Pegar Archivos Manualmente
-
-1. **Crear proyecto Java:**
-   - `File` → `New` → `Java Project` → Nombre: `Prueba1_TecMetProg` → Finish
-
-2. **Copiar archivos:**
-   - Abre el Explorador de archivos
-   - Ve a la carpeta `src/` de esta solución
-   - Selecciona todos los archivos `.java`
-   - Cópialosy pégalos en `Prueba1_TecMetProg/src/` en Eclipse
-   - Eclipse te pedirá confirmar → Click "Yes to All"
+2. **Copiar los archivos `.java`:**
+	- Abre el Explorador de archivos
+	- Ve a `Técnicas y Metodologías de Prog. Avanz/PRUEBA 1/2025 S1/Solución/src/`
+	- Selecciona todos los archivos `.java`
+	- Cópialos y pégalos en la carpeta `src/` de tu proyecto en Eclipse
+	- Eclipse pedirá confirmación → Clic "Yes to All"
 
 3. **Ejecutar:**
-   - Click derecho en `Main.java`
-   - `Run As` → `Java Application`
-
-### Verificar que Todo Funciona
-
-- En la consola de Eclipse deberías ver:
-  ```
-  ========================================
-  Técnicas y Metodologías de Prog. Avanzada
-  Prueba 1 - 2025 S1
-  ========================================
-  
-  === EJERCICIO 1: Suma de Dígitos (Recursivo) ===
-  Ingrese un número positivo:
-  ```
-
-- Ingresa un número (ej: 123) y presiona Enter
+	- Clic derecho en `Main.java`
+	- `Run As` → `Java Application`
 
 ### Notas Importantes
 Este examen fue realizado de forma presencial en papel, por lo que esta es una **solución anterior a la entrega real**. Los archivos de referencia en `referencia/` corresponden a las soluciones parciales escritas en la prueba.
