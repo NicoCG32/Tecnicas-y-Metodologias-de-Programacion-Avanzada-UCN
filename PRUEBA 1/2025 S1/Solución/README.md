@@ -4,7 +4,7 @@
 **Período**: 2025 Semestre 1  
 **Tipo**: Prueba 1
 
-**Estado**: ✅ Implementación Completa
+**Estado**: ✅ Implementación Completa | ✅ Documentación completa
 
 ## Descripción
 
@@ -119,3 +119,7 @@ Este examen fue realizado de forma presencial en papel, por lo que esta es una *
 
 - [x] Base de estructura
 - [x] Implementación completa
+- [x] Documentación Ejercicio 1 (Suma de Dígitos)
+- [x] Documentación Ejercicio 2 (Multiplicar Impares)
+- [x] Documentación Ejercicio 3 (Árbol Binario de Búsqueda)
+- [x] Documentación Ejercicio 4 (Recorrido Post-Orden)
