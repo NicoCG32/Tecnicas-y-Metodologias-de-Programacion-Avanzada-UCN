@@ -1,7 +1,5 @@
-/**
- * Clase Nodo: Representa un nodo en el Árbol Binario de Búsqueda.
- * Cada nodo contiene una Persona y referencias a nodos hijo.
- */
+package arbol;
+
 public class Nodo {
     public Persona persona;
     public Nodo izquierdo;

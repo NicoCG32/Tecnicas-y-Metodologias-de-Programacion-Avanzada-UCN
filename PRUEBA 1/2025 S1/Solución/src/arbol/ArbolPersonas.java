@@ -1,13 +1,5 @@
-/**
- * Ejercicio 3: Árbol Binario de Búsqueda de Personas
- * 
- * Problema: Organización de datos de personas en un ABB, ordenado por RUT.
- * Cada nodo contiene una Persona (RUT, nombre, edad).
- * 
- * Se implementa:
- * - Inserción recursiva en el árbol
- * - Suma de edades de personas con exactamente un solo hijo
- */
+package arbol;
+
 public class ArbolPersonas {
     private Nodo raiz;
     
@@ -15,24 +7,13 @@ public class ArbolPersonas {
         raiz = null;
     }
     
-    /**
-     * Ejercicio 3.1: Inserta una persona en el árbol binario de búsqueda.
-     * La inserción se ordena por RUT (alfabéticamente).
-     * 
-     * @param persona la persona a insertar
-     */
+    // Inserta una persona en el árbol, ordenando por RUT (alfabéticamente)
     public void insertar(Persona persona) {
         raiz = insertarRec(raiz, persona);
     }
     
-    /**
-     * Método recursivo para insertar una persona en el árbol.
-     * Mantiene la propiedad de ABB: RUT menor a la izquierda, mayor a la derecha.
-     * 
-     * @param nodo nodo actual en la recursión
-     * @param persona persona a insertar
-     * @return el nodo (actual o nuevo) después de la inserción
-     */
+    // Inserta recursivamente una persona en el árbol
+    // Si RUT nodo > RUT nuevo va a izquierda, sino a derecha
     private Nodo insertarRec(Nodo nodo, Persona persona) {
         if (nodo == null) {
             return new Nodo(persona);
@@ -49,24 +30,12 @@ public class ArbolPersonas {
         return nodo;
     }
     
-    /**
-     * Ejercicio 3.2: Calcula la suma de edades de las personas que tienen 
-     * exactamente un solo hijo (un solo hijo izquierdo o un solo hijo derecho).
-     * 
-     * @return la suma total de edades de nodos con un solo hijo
-     */
+    // Suma edades de personas con exactamente un solo hijo
     public int sumaEdadesUnSoloHijo() {
         return sumaEdadesUnSoloHijoRec(raiz);
     }
     
-    /**
-     * Método recursivo para sumar edades de nodos con un solo hijo.
-     * Recorre recursivamente el árbol y suma la edad cuando encuentra un nodo
-     * con exactamente un hijo.
-     * 
-     * @param nodo nodo actual en la recursión
-     * @return la suma de edades de nodos con un solo hijo en el subárbol
-     */
+    // Recorre el árbol y suma edades de nodos con un solo hijo
     private int sumaEdadesUnSoloHijoRec(Nodo nodo) {
         int suma = 0;
         if (nodo != null) {

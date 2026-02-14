@@ -1,5 +1,8 @@
+# Ejercicio 3
+
+```java
 class ArbolPersonas {
-    // 3.1
+
     public void insertar(Persona persona) {
         raiz = insertarRec(raiz, persona);
     }
@@ -33,7 +36,7 @@ class ArbolPersonas {
             suma += sumaEdadesUnSoloHijoRec(nodo.izquierdo);
             suma += sumaEdadesUnSoloHijoRec(nodo.derecho);
             
-            if ( (nodo.izquierdo == null && nodo.derecho != null)||(nodo.izquierdo != null && nodo.derecho == null) ) {
+            if ((nodo.izquierdo == null && nodo.derecho != null) || (nodo.izquierdo != null && nodo.derecho == null)) {
                 return suma + nodo.persona.edad;
             }
             
@@ -41,3 +44,4 @@ class ArbolPersonas {
         return suma;
     }
 }
+```

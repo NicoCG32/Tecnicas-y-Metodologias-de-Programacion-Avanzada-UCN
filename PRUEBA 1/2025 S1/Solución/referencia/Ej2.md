@@ -1,8 +1,11 @@
+# Ejercicio 2
+
+```java
 class Main {
     public static int multiplicarImpares(int[] arr, int inicio, int fin) {
         if (inicio > fin) return 1;
         
-	if (inicio == fin && arr[inicio] % 2 == 1) return arr[inicio];
+        if (inicio == fin && arr[inicio] % 2 == 1) return arr[inicio];
         else if (inicio == fin && arr[inicio] % 2 != 1) return 1;
         
         int mid = (inicio + fin) / 2;
@@ -10,3 +13,4 @@ class Main {
         return multiplicarImpares(arr, inicio, mid) * multiplicarImpares(arr, mid + 1, fin);
     }
 }
+```

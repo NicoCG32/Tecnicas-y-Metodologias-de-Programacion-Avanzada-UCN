@@ -1,21 +1,20 @@
-/**
- * Ejercicio 2: Multiplicar Impares
- * 
- * Problema: Utilizando dividir para conquistar, multiplicar todos 
- * los números impares de una lista.
- * 
- * Consideración: Si no hay números impares, retornar 1.
- */
-public class MultiplicarImpares {
-    
-    /**
-     * Multiplica todos los números impares del arreglo usando divide y conquista.
-     * 
-     * @param arr el arreglo de números
-     * @param inicio índice inicial del rango a procesar
-     * @param fin índice final del rango a procesar
-     * @return el producto de todos los números impares en el rango [inicio, fin]
-     */
+package multiplicarimpares;
+
+import java.util.Arrays;
+
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("=== EJERCICIO 2: Multiplicar Impares (Divide y Conquista) ===");
+        
+        int[] arr = {2, 3, 5, 8, 7, 4, 9};
+        System.out.println("Arreglo: " + Arrays.toString(arr));
+        
+        int resultado = multiplicarImpares(arr, 0, arr.length - 1);
+        System.out.println("Producto de impares: " + resultado);
+    }
+
+        // Multiplica todos los números impares del arreglo usando divide y conquista
+    // Si no hay impares, retorna 1
     public static int multiplicarImpares(int[] arr, int inicio, int fin) {
         // Caso base: rango inválido
         if (inicio > fin) {

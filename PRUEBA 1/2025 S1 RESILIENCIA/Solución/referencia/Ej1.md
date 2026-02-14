@@ -1,3 +1,6 @@
+# Ejercicio 1
+
+```java
 import java.util.Scanner;
 
 class Main {
@@ -37,3 +40,4 @@ class Main {
     	return capicua(medio);
     }
 }
+```

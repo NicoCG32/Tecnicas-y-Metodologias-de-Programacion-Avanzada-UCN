@@ -1,0 +1,15 @@
+Pollo,250,2
+Leche,100,1
+Arroz,150,5
+Manzana,50,6
+Pescado,280,2
+Queso,220,1
+Papa,80,5
+Pan,200,5
+Huevo,70,2
+Lechuga,15,6
+Zanahoria,35,6
+Carnes,300,2
+Verduras,40,6
+Legumbres,120,3
+Aceite,900,7
