@@ -8,7 +8,7 @@ import java.util.Scanner;   // Clase para leer desde archivos o consola
 public class AppABB {
     // Lee datos del archivo y los inserta en el árbol
     public static void ingresarDatosAlABB(ABB abb) throws IOException {
-        File file = new File("src/abb/datos.txt");
+        File file = new File("datos.txt");
         Scanner scan = new Scanner(file);
         // Lee toda la línea del archivo
         String[] elementos = scan.nextLine().split(",");

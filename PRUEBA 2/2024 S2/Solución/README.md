@@ -25,7 +25,7 @@ Esta carpeta contiene las soluciones de la Prueba 2: tres ejercicios que evalúa
 - Debe cubrirse al menos 1 alimento de cada grupo
 
 **Archivos de datos**:
-- `src/dieta/alimentos.txt` (15 alimentos con nombre, calorías, grupo)
+- `alimentos.txt` (15 alimentos con nombre, calorías, grupo)
 
 **Clases**:
 - `Alimento.java`: Entidad con nombre, calorías, grupo
@@ -41,7 +41,7 @@ Esta carpeta contiene las soluciones de la Prueba 2: tres ejercicios que evalúa
 - Búsqueda del máximo recorriendo hacia la derecha
 
 **Archivos de datos**:
-- `src/abb/datos.txt` (cantidad, seguida de valores a insertar)
+- `datos.txt` (cantidad, seguida de valores a insertar)
 
 **Clases**:
 - `NodoABB.java`: Estructura de nodo con getters/setters
@@ -111,6 +111,17 @@ Este código se encuentra en: `Técnicas y Metodologías de Prog. Avanz/PRUEBA 2
    - **Ej2 (ABB)**: Clic derecho en `src/abb/AppABB.java` → `Run As` → `Java Application`
    - **Ej3 (Concurrencia)**: Clic derecho en `src/hilos/AppHilos.java` → `Run As` → `Java Application`
 
+### Importante: Archivos de Texto
+
+Para que el programa pueda leer los archivos de texto (.txt) correctamente:
+- Copia los archivos desde sus ubicaciones originales a la raíz de tu proyecto (paralelo a la carpeta `src/`):
+  - `alimentos.txt` (actualmente en `src/dieta/alimentos.txt`)
+  - `datos.txt` (actualmente en `src/abb/datos.txt`)
+- Los archivos requeridos son:
+  - `alimentos.txt` (para el ejercicio de Dieta)
+  - `datos.txt` (para el ejercicio de ABB)
+- El programa los buscará en la raíz del proyecto, no dentro de `src/`
+
 ### Opción Alternativa: Copiar Archivos Manualmente
 
 1. **Crear un nuevo proyecto Java en Eclipse:**
@@ -139,7 +150,7 @@ Este código se encuentra en: `Técnicas y Metodologías de Prog. Avanz/PRUEBA 2
 - **Salida**: Combinación de alimentos que cumpla restricciones o mensaje de no solución
 
 ### Ejercicio 2 - ABB Mayor
-- **Entrada**: Archivo `src/abb/datos.txt` debe existir y contener datos en formato CSV
+- **Entrada**: Archivo `datos.txt` debe existir en la raíz del proyecto
 - **Salida esperada**:
   ```
   El mayor del ABB es: 14
@@ -174,7 +185,7 @@ Los enunciados y planteamientos detallados de cada ejercicio se encuentran en la
 
 ## Notas Importantes
 
-- **Archivos de datos**: Los archivos `.txt` deben estar en el mismo directorio que el `.java` correspondiente o en la ruta especificada en el código.
+- **Archivos de datos**: Los archivos `.txt` (`alimentos.txt` y `datos.txt`) deben estar en la raíz del proyecto (paralelo a `src/`).
 - **Backtracking**: El Ejercicio 1 puede tardar dependiendo de los límites de calorías ingresados.
 - **Concurrencia**: El Ejercicio 3 mostrará que la versión concurrente es frecuentemente más lenta que la secuencial debido al overhead de sincronización.
 - **Entrada estándar**: El Ejercicio 1 requiere ingreso manual de dos valores. Los otros leen archivos automáticamente.

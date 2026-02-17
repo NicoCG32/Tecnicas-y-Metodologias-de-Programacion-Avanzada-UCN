@@ -55,7 +55,7 @@ public class DietaApp {
     // Lee alimentos desde un archivo de texto
     // Formato del archivo: nombre,calorias,grupo (ej: Pollo,250,2)
     public static void leerAlimentos() throws IOException {
-        File file = new File("src/dieta/alimentos.txt");
+        File file = new File("alimentos.txt");
         Scanner scan = new Scanner(file);
         while (scan.hasNextLine()) {
             // split(",") divide la línea en 3 partes usando la coma como separador
