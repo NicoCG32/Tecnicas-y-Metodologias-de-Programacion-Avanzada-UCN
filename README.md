@@ -202,3 +202,26 @@ Al estudiar o implementar una solución en este curso, conviene justificar:
 - Complejidad temporal: cuánto crece el tiempo de ejecución.
 - Complejidad espacial: cuánta memoria adicional requiere.
 - Robustez: cómo se comporta ante entradas inválidas o casos borde.
+
+## Nota sobre niveles de abstracción
+
+Técnicas y Metodologías de Programación Avanzada se ubica en el **nivel 1** de abstracción, junto con Programación Orientada a Objetos, pero con un énfasis distinto. Mientras POO enseña a modelar dominios mediante clases, objetos y relaciones, este curso refuerza la capacidad de reconocer técnicas de resolución y estructuras de razonamiento algorítmico.
+
+En Programación se trabaja principalmente con una lógica lineal:
+
+```text
+input -> proceso 1 -> proceso 2 -> proceso 3 -> output
+```
+
+En este curso ya no basta con encadenar instrucciones. Hay que identificar si el problema se resuelve mejor con recursión, divide y conquista, fuerza bruta, backtracking, árboles o concurrencia. Eso obliga a pensar en **formas de resolver**, no solo en líneas de código.
+
+También aparece una primera idea de componente. Cuando se trabaja con árboles, recorridos, contenedores o separación `App -> Sistema -> SistemaImpl`, el programa deja de ser una función aislada y empieza a organizarse como colaboración entre partes. Todavía no se estudia arquitectura avanzada, pero sí se prepara el terreno para Estructura de Datos y Patrones de Software.
+
+| Nivel | Curso o enfoque | Forma principal de pensar |
+| --- | --- | --- |
+| 0 | [Programación](https://github.com/NicoCG32/Programacion-UCN) | Líneas de código, instrucciones, pasos directos y algoritmos básicos. |
+| 1 | [Programación Orientada a Objetos](https://github.com/NicoCG32/Programacion-Orientada-a-Objetos-UCN) y [Técnicas y Metodologías](https://github.com/NicoCG32/Tecnicas-y-Metodologias-de-Programacion-Avanzada-UCN) | Dominio, clases, objetos, relaciones, técnicas de resolución y componentes básicos. |
+| 2 | [Estructura de Datos](https://github.com/NicoCG32/Estructura-de-Datos-UCN) | Contenedores, organización de datos, invariantes y algoritmos sobre estructuras. |
+| 3 | [Patrones de Software y Programación](https://github.com/NicoCG32/Patrones-de-Software-y-Programacion-UCN) | Componentes, composición de clases, dependencias y arquitectura de software. |
+
+La idea central es que una técnica no se memoriza como plantilla. Se comprende como una forma de mirar el problema: qué se divide, qué se repite, qué se poda, qué estado se comparte y qué costo tiene cada decisión.
