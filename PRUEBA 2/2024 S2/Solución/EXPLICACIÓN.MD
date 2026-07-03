@@ -34,7 +34,7 @@ Una solución es **incompleta** si:
 - La suma de calorías aún está por debajo del `limiteInferior`, O
 - Falta al menos un alimento en alguno de los 7 grupos (no hay cobertura completa).
 
-### Decisiones de Diseño
+### Decisiones de diseño
 
 #### Estructuras de Datos
 
@@ -173,7 +173,7 @@ Basado en el análisis presentado en [referencia/Ej2.md](../../referencia/Ej2.md
 - El máximo siempre está en el **nodo más a la derecha** del árbol.
 - Se alcanza siguiendo siempre la rama derecha hasta encontrar un nodo sin hijo derecho.
 
-### Decisiones de Diseño
+### Decisiones de diseño
 
 #### Estructura de Nodos
 
@@ -256,7 +256,7 @@ mayor(nodo) {
 - **Inserción**: O(log n) en promedio (árbol balanceado), O(n) en peor caso (árbol degenerado).
 - **Búsqueda del máximo**: O(h) donde h es la altura (O(log n) en balanceado, O(n) en degenerado).
 
-### Ejemplo de Ejecución
+### Ejemplo de ejecución
 
 **Entrada** (`datos.txt`):
 ```
@@ -296,7 +296,7 @@ Basado en el análisis presentado en [referencia/Ej3.md](../../referencia/Ej3.md
 - Matriz destino 5×5.
 - Se distribuyen los 25 elementos del vector en la matriz fila por fila.
 
-### Decisiones de Diseño
+### Decisiones de diseño
 
 #### Paralelización por Filas
 
@@ -335,7 +335,7 @@ public void run() {
 - Sin sincronización, dos hilos podrían escribir en `matrizCC[i][j]` simultáneamente → **data race**.
 - El lock es un `Object compartido` que actúa como "puerta" de exclusión mutua.
 
-**Trade-off**: La sincronización **elimina la paralelización efectiva** porque los hilos deben esperar su turno. Por eso el desempeño concurrente a menudo es **peor** que el secuencial en este caso (el overhead de sincronización supera el beneficio).
+**Costo de diseño**: La sincronización **elimina la paralelización efectiva** porque los hilos deben esperar su turno. Por eso el desempeño concurrente a menudo es **peor** que el secuencial en este caso (el costo adicional de sincronización supera el beneficio).
 
 #### Medición de Tiempo
 
@@ -406,7 +406,7 @@ int cantHilos = Math.min(5, Runtime.getRuntime().availableProcessors());
 | **Thread.join()** | Bloquea hasta que el hilo termine | `h.join()` |
 | **System.nanoTime()** | Reloj de nanosegundos | Medir duración |
 
-### Ejemplo de Ejecución
+### Ejemplo de ejecución
 
 **Vector generado** (ejemplo):
 ```
@@ -435,7 +435,7 @@ Versión CON concurrencia: 2.456 ms
 [Ambas matrices tienen contenido idéntico]
 ```
 
-**Nota**: La versión concurrente es **más lenta** porque el overhead de sincronización (`synchronized`) y cambio de contexto de hilos supera el beneficio del paralelismo.
+**Nota**: La versión concurrente es **más lenta** porque el costo adicional de sincronización (`synchronized`) y cambio de contexto de hilos supera el beneficio del paralelismo.
 
 ---
 
@@ -447,7 +447,7 @@ Versión CON concurrencia: 2.456 ms
 - **Ej2**: `src/abb/datos.txt` → CSV con cantidad seguida de valores.
 - **Ej3**: Generación in-memory (no requiere archivo).
 
-### Manejo de Excepciones
+### Manejo de excepciones
 
 - `FileNotFoundException`: Capturada en `main()` si el archivo no existe.
 - `NumberFormatException`: Implícita si el parseo de enteros falla.
@@ -465,7 +465,7 @@ Versión CON concurrencia: 2.456 ms
 |-----------|------------------|------|-------------|
 | **Dieta** | Backtracking con poda | Búsqueda exhaustiva | O(b^d) con poda |
 | **ABB Mayor** | Recursión sobre estructura | Árbol binario | O(h) |
-| **Concurrencia** | Secciones críticas sincronizadas | Paralelismo | O(n/p) + overhead |
+| **Concurrencia** | Secciones críticas sincronizadas | Paralelismo | O(n/p) + costo adicional |
 
 ---
 
@@ -475,9 +475,9 @@ Versión CON concurrencia: 2.456 ms
 
 2. **ABB requiere balanceo**: Este ejercicio asume inserción aleatoria. Un árbol degenerado (ej: insertar en orden) sería O(n).
 
-3. **Concurrencia requiere sincronización**: Sin `synchronized`, habría race conditions. Con él, la paralelización se pierde (mutex es un cuello de botella).
+3. **Concurrencia requiere sincronización**: Sin `synchronized`, habría condiciones de carrera. Con él, la paralelización se pierde (mutex es un cuello de botella).
 
-4. **Archivos CSV**: Todos usan parsing simple con `split(",")` e `Integer.parseInt()`. No se maneja escape de comas.
+4. **Archivos CSV**: Todos usan análisis simple con `split(",")` e `Integer.parseInt()`. No se maneja escape de comas.
 
 5. **Pruebas**:
    - Dieta: verificar que cubre todos los grupos y respeta límites de calorías.

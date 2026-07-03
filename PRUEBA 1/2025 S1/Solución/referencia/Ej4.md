@@ -13,7 +13,7 @@
 
 **Recorrido aplicado al árbol:**
 ```
-Partimos en 8 (raiz)
+Partimos en 8 (raíz)
     Revisamos izquierda -> 3
         Revisamos izquierda -> 1
             Revisamos izquierda: no hay nada

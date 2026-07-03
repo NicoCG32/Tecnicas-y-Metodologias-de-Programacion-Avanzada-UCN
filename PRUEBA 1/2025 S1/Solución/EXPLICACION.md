@@ -44,11 +44,11 @@ public static int sumaDigitos(int n) {
 ```
 
 #### Explicación:
-- **Caso Base:** `n / 10 == 0` significa que `n` es un número de un solo dígito (0-9). Retornamos `n % 10` (el dígito mismo).
-- **Caso Recursivo:** Extraemos el último dígito con `n % 10` y lo sumamos con el resultado de la recursión sobre el resto del número (`n / 10`).
+- **Caso base:** `n / 10 == 0` significa que `n` es un número de un solo dígito (0-9). Retornamos `n % 10` (el dígito mismo).
+- **Caso recursivo:** Extraemos el último dígito con `n % 10` y lo sumamos con el resultado de la recursión sobre el resto del número (`n / 10`).
 
-#### ⚠️ Nota Importante - División de Enteros en Java:
-En Java, cuando se dividen dos números enteros (int), el resultado **descartan los decimales** automáticamente. Por ejemplo:
+#### ⚠️ Nota importante - División de enteros en Java:
+En Java, cuando se dividen dos números enteros (int), el resultado **descarta los decimales** automáticamente. Por ejemplo:
 - `123 / 10 = 12` (no 12.3)
 - `12 / 10 = 1` (no 1.2)
 - `1 / 10 = 0` (no 0.1)
@@ -71,7 +71,7 @@ Esta técnica divide el problema en subproblemas más pequeños:
 2. **Conquista:** Resolver recursivamente cada mitad
 3. **Combina:** Multiplicar los resultados de ambas mitades
 
-#### Ejemplo de Ejecución:
+#### Ejemplo de ejecución:
 ```
 multiplicarImpares([2, 3, 5, 8, 7], 0, 4)
 ├─ Izquierda: multiplicarImpares([2, 3, 5, 8, 7], 0, 2)
@@ -114,8 +114,8 @@ public static int multiplicarImpares(int[] arr, int inicio, int fin) {
 ```
 
 #### Explicación:
-- **Caso Base 1:** Si `inicio > fin`, el rango es inválido, retornar 1 (elemento neutro de la multiplicación).
-- **Caso Base 2:** Si hay un solo elemento, verificar si es impar. Si lo es, retornarlo; si no, retornar 1.
+- **Caso base 1:** Si `inicio > fin`, el rango es inválido, retornar 1 (elemento neutro de la multiplicación).
+- **Caso base 2:** Si hay un solo elemento, verificar si es impar. Si lo es, retornarlo; si no, retornar 1.
 - **Divide y Conquista:** Calcular el punto medio y resolver recursivamente ambas mitades, multiplicando resultados.
 
 ---
@@ -169,8 +169,8 @@ private Nodo insertarRec(Nodo nodo, Persona persona) {
 ```
 
 #### Explicación:
-- **Caso Base:** Si el nodo es nulo, creamos uno nuevo con la persona.
-- **Caso Recursivo:** Comparamos el RUT de la persona actual con el del nuevo nodo:
+- **Caso base:** Si el nodo es nulo, creamos uno nuevo con la persona.
+- **Caso recursivo:** Comparamos el RUT de la persona actual con el del nuevo nodo:
   - Si es menor, insertamos en el subárbol izquierdo.
   - Si es mayor o igual, insertamos en el subárbol derecho.
 
@@ -205,7 +205,7 @@ Sin embargo, en el contexto real de Chile, los RUT contienen un dígito verifica
 
 #### Concepto:
 Un nodo con un solo hijo es aquel que tiene:
-- Solo hijo izquierdo (hijo derecho es nulo), O
+- Solo hijo izquierdo (hijo derecho es nulo), o
 - Solo hijo derecho (hijo izquierdo es nulo)
 
 #### Ejemplo:
@@ -347,8 +347,8 @@ public void postOrden(Nodo nodo) {
 ## Conceptos Clave
 
 ### Recursión
-- **Caso Base:** Condición que detiene la recursión
-- **Caso Recursivo:** La función se llama a sí misma con un problema más pequeño
+- **Caso base:** Condición que detiene la recursión
+- **Caso recursivo:** La función se llama a sí misma con un problema más pequeño
 - **Ventaja:** Código más simple y elegante para problemas naturalmente recursivos
 
 ### Divide y Conquista

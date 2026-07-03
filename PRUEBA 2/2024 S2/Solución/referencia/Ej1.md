@@ -2,50 +2,50 @@
 
 ## Modelamiento del problema
 
-**a. Que representa la raiz del arbol?**
-- Ningun alimento escogido.
+**a. ¿Qué representa la raíz del árbol?**
+- Ningún alimento escogido.
 
-**b. Cuales son los potenciales candidatos?**
+**b. ¿Cuáles son los potenciales candidatos?**
 - Todos los alimentos del archivo (N alimentos).
 
-**c. Dibuje el arbol de busqueda (2 niveles ademas de la raiz)**
+**c. Dibuje el árbol de búsqueda (2 niveles además de la raíz)**
 
 ![Dibujo Árbol de Búsqueda](Árbol.png)
 
-**d. Cuantos niveles tendra el arbol de busqueda?**
-- No hay un numero fijo: depende de cuando se alcanza una solucion válida.
+**d. ¿Cuántos niveles tendrá el árbol de búsqueda?**
+- No hay un número fijo: depende de cuándo se alcanza una solución válida.
 
-**e. Que representa cada nivel del arbol?**
+**e. ¿Qué representa cada nivel del árbol?**
 - La cantidad de alimentos seleccionados hasta ese punto.
 
-**f. En que nivel del arbol se podria encontrar la solucion?**
-- En cualquier nivel que cumpla rango de calorias y cobertura de grupos.
+**f. ¿En qué nivel del árbol se podría encontrar la solución?**
+- En cualquier nivel que cumpla rango de calorías y cobertura de grupos.
 
-**g. Que estructuras de datos necesita y para que?**
+**g. ¿Qué estructuras de datos necesita y para qué?**
 - `Grupo` con `cantAlimGrupo` para llevar el conteo por grupo.
 - `Grupo[] grupos` de 7 posiciones (0..6) para los grupos alimenticios.
-- `Alimento` con `nombre`, `calorias`, `grupo`.
+- `Alimento` con `nombre`, `calorias` y `grupo`.
 - `Alimento[] alimentos` con todos los alimentos del archivo.
 - `Alimento[] solucion` para registrar los alimentos elegidos.
-- `int cantAlimentosDieta` para el tamanio actual de la solucion.
+- `int cantAlimentosDieta` para el tamaño actual de la solución.
 
-**h. Que significa ser aceptable?**
-- La suma de calorias con el nuevo candidato no supera el limite superior.
+**h. ¿Qué significa ser aceptable?**
+- La suma de calorías con el nuevo candidato no supera el límite superior.
 - El grupo del candidato tiene menos de 2 alimentos seleccionados.
 
-**i. Que significa registrar la seleccion?**
+**i. ¿Qué significa registrar la selección?**
 - Agregar el alimento a `solucion`.
 - Incrementar `cantAlimentosDieta`.
 - Incrementar el contador del grupo correspondiente.
 
-**j. Que significa cancelar la seleccion?**
-- Quitar el ultimo alimento de `solucion`.
+**j. ¿Qué significa cancelar la selección?**
+- Quitar el último alimento de `solucion`.
 - Decrementar `cantAlimentosDieta`.
 - Decrementar el contador del grupo correspondiente.
 
-**k. Que significa solucion incompleta?**
-- Aun no se cumple el rango de calorias.
-- O falta al menos un alimento en algun grupo.
+**k. ¿Qué significa solución incompleta?**
+- Aún no se cumple el rango de calorías.
+- O falta al menos un alimento en algún grupo.
 
 ## Implementación
 
