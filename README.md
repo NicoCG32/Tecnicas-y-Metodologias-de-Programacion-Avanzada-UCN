@@ -1,8 +1,19 @@
 # Técnicas y Metodologías de Programación Avanzada - UCN
 
+![Java](https://img.shields.io/badge/Java-orientado%20a%20POO-ED8B00?logo=openjdk&logoColor=white)
+![Eclipse](https://img.shields.io/badge/IDE-Eclipse%20opcional-2C2255?logo=eclipseide&logoColor=white)
+![Pseudocódigo](https://img.shields.io/badge/Modalidad-Pseudoc%C3%B3digo%20%7C%20Java-6A5ACD)
+![Nivel](https://img.shields.io/badge/Nivel-1%20T%C3%A9cnicas%20algor%C3%ADtmicas-blue)
+
 Repositorio de enunciados, archivos de entrada, soluciones y documentación de apoyo para el curso **Técnicas y Metodologías de Programación Avanzada** de la Universidad Católica del Norte.
 
 Este repositorio fue separado desde el repositorio monolítico original para reunir en una unidad autónoma los ejercicios de recursión, divide y conquista, árboles, backtracking y concurrencia en Java.
+
+## Entorno del curso
+
+Este curso es más variable en su modalidad. Puede trabajarse en **Eclipse con Java**, especialmente cuando se implementan soluciones completas, pero también puede evaluarse o ejercitarse **a papel con pseudocódigo**.
+
+En la práctica se orienta a Java porque suele cursarse en paralelo con Programación Orientada a Objetos. Por eso muchos ejercicios usan clases, métodos, árboles y estructuras compatibles con la forma de pensar que se está desarrollando en POO, aunque el foco principal aquí está en la técnica algorítmica.
 
 ## Estructura
 
