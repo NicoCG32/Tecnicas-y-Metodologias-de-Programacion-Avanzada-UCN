@@ -2,26 +2,7 @@
 
 ## Modelamiento del problema
 
-**a. ¿Qué representa la raíz del árbol?**
-- Ningún alimento escogido.
-
-**b. ¿Cuáles son los potenciales candidatos?**
-- Todos los alimentos del archivo (N alimentos).
-
-**c. Dibuje el árbol de búsqueda (2 niveles además de la raíz)**
-
-![Dibujo Árbol de Búsqueda](Árbol.png)
-
-**d. ¿Cuántos niveles tendrá el árbol de búsqueda?**
-- No hay un número fijo: depende de cuándo se alcanza una solución válida.
-
-**e. ¿Qué representa cada nivel del árbol?**
-- La cantidad de alimentos seleccionados hasta ese punto.
-
-**f. ¿En qué nivel del árbol se podría encontrar la solución?**
-- En cualquier nivel que cumpla rango de calorías y cobertura de grupos.
-
-**g. ¿Qué estructuras de datos necesita y para qué?**
+**a. ¿Qué representa la raíz del árbol?** - Ningún alimento escogido. **b. ¿Cuáles son los potenciales candidatos?** - Todos los alimentos del archivo (N alimentos). **c. Dibuje el árbol de búsqueda (2 niveles además de la raíz)** ![Dibujo Árbol de Búsqueda](Árbol.png) **d. ¿Cuántos niveles tendrá el árbol de búsqueda?** - No hay un número fijo: depende de cuándo se alcanza una solución válida. **e. ¿Qué representa cada nivel del árbol?** - La cantidad de alimentos seleccionados hasta ese punto. **f. ¿En qué nivel del árbol se podría encontrar la solución?** - En cualquier nivel que cumpla rango de calorías y cobertura de grupos. **g. ¿Qué estructuras de datos necesita y para qué?**
 - `Grupo` con `cantAlimGrupo` para llevar el conteo por grupo.
 - `Grupo[] grupos` de 7 posiciones (0..6) para los grupos alimenticios.
 - `Alimento` con `nombre`, `calorias` y `grupo`.

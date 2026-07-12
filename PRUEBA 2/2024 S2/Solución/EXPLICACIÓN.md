@@ -10,7 +10,7 @@ Esta prueba evalúa tres técnicas fundamentales de programación: **Backtrackin
 
 ### Modelamiento del Problema
 
-Basado en el análisis presentado en [referencia/Ej1.md](../../referencia/Ej1.md):
+Basado en el análisis presentado en [referencia/Ej1.md](referencia/Ej1.md):
 
 **a) Raíz del árbol de búsqueda**
 - El nodo raíz representa el estado inicial: **ningún alimento seleccionado**, caloría total en 0, todos los grupos con contador 0.
@@ -86,12 +86,12 @@ La poda **elimina ramas imposibles** sin explorar sus descendientes, reduciendo 
 
 ### Implementación
 
-**Ubicación**: [src/dieta/](../../../src/dieta/)
+**Ubicación**: [src/dieta/](src/dieta/)
 
 **Componentes**:
-- [Alimento.java](../../../src/dieta/Alimento.java): Simple POJO con campos `nombre`, `calorias`, `grupo` (públicos).
-- [Grupo.java](../../../src/dieta/Grupo.java): Contador de alimentos seleccionados por grupo.
-- [DietaApp.java](../../../src/dieta/DietaApp.java): Lógica principal de backtracking.
+- [Alimento.java](src/dieta/Alimento.java): Simple POJO con campos `nombre`, `calorias`, `grupo` (públicos).
+- [Grupo.java](src/dieta/Grupo.java): Contador de alimentos seleccionados por grupo.
+- [DietaApp.java](src/dieta/DietaApp.java): Lógica principal de backtracking.
 
 **Flujo de ejecución** (método `main`):
 1. Leer `limiteInferior` y `limiteSuperior` desde entrada estándar.
@@ -108,7 +108,7 @@ intenta(k) {
         imprimirSolucion();
         return;
     }
-    
+
     // Caso recursivo: probar cada alimento desde k
     for (int i = k; i < cantAlimentos; i++) {
         if (esAceptable(i)) {
@@ -163,7 +163,7 @@ Grupos cubiertos: 7/7
 
 ### Modelamiento del Problema
 
-Basado en el análisis presentado en [referencia/Ej2.md](../../referencia/Ej2.md):
+Basado en el análisis presentado en [referencia/Ej2.md](referencia/Ej2.md):
 
 **Propiedad ABB**:
 - Para cada nodo, **todos los valores en el subárbol izquierdo son menores** que el nodo, **todos en el derecho son mayores o iguales**.
@@ -181,7 +181,7 @@ Basado en el análisis presentado en [referencia/Ej2.md](../../referencia/Ej2.md
 class NodoABB {
     private int dato;
     private NodoABB hijoIzquierdo, hijoDerecho;
-    
+
     // Getters y Setters para encapsulación
 }
 ```
@@ -220,7 +220,7 @@ ingresarDato(actual, nuevo) {
 ```java
 mayor(nodo) {
     if (nodo == null) return null;
-    if (nodo.getHijoDerecho() == null) 
+    if (nodo.getHijoDerecho() == null)
         return nodo;  // Encontré el máximo
     return mayor(nodo.getHijoDerecho());  // Seguir hacia la derecha
 }
@@ -230,12 +230,12 @@ mayor(nodo) {
 
 ### Implementación
 
-**Ubicación**: [src/abb/](../../../src/abb/)
+**Ubicación**: [src/abb/](src/abb/)
 
 **Componentes**:
-- [NodoABB.java](../../../src/abb/NodoABB.java): Estructura de nodo con getters/setters.
-- [ABB.java](../../../src/abb/ABB.java): Árbol propiamente dicho.
-- [AppABB.java](../../../src/abb/AppABB.java): Carga de datos y rutina principal.
+- [NodoABB.java](src/abb/NodoABB.java): Estructura de nodo con getters/setters.
+- [ABB.java](src/abb/ABB.java): Árbol propiamente dicho.
+- [AppABB.java](src/abb/AppABB.java): Carga de datos y rutina principal.
 
 **Flujo de ejecución**:
 1. Crear instancia vacía de ABB.
@@ -287,7 +287,7 @@ El mayor del ABB es: 14
 
 ### Modelamiento del Problema
 
-Basado en el análisis presentado en [referencia/Ej3.md](../../referencia/Ej3.md):
+Basado en el análisis presentado en [referencia/Ej3.md](referencia/Ej3.md):
 
 **Objetivo**: Comparar el desempeño de llenar una matriz 5×5 de forma **secuencial vs concurrente**.
 
@@ -310,7 +310,7 @@ hilos[1] = new AppHilos(1, 1);  // Fila 1
 hilos[4] = new AppHilos(4, 4);  // Fila 4
 ```
 
-**Justificación**: 
+**Justificación**:
 - Dividir el trabajo por filas permite que múltiples hilos trabajen **sin contención** (si no hubiera sincronización requerida).
 - Cada hilo maneja un rango específico `[filaIni, filaFin]`.
 
@@ -362,10 +362,10 @@ int cantHilos = Math.min(5, Runtime.getRuntime().availableProcessors());
 
 ### Implementación
 
-**Ubicación**: [src/hilos/](../../../src/hilos/)
+**Ubicación**: [src/hilos/](src/hilos/)
 
 **Componentes**:
-- [AppHilos.java](../../../src/hilos/AppHilos.java): Extiende `Thread` para ejecución paralela.
+- [AppHilos.java](src/hilos/AppHilos.java): Extiende `Thread` para ejecución paralela.
 
 **Flujo de ejecución**:
 
@@ -376,19 +376,19 @@ int cantHilos = Math.min(5, Runtime.getRuntime().availableProcessors());
        vectorGenerado[i] = rand.nextInt(16);  // Valores 0..15
    }
    ```
-   - Se usa `System.nanoTime()` como semilla para variabilidad.
+ - Se usa `System.nanoTime()` como semilla para variabilidad.
 
 2. **Versión secuencial**:
    ```java
    generarMatrizSC(matrizSC);  // Sin concurrencia
    ```
-   - Llena la matriz de forma lineal, sin hilos adicionales.
+ - Llena la matriz de forma lineal, sin hilos adicionales.
 
 3. **Versión concurrente**:
-   - Crear hilos según procesadores disponibles.
-   - Llamar `start()` en cada hilo (no `run()` directamente).
-   - `start()` lanza la ejecución en paralelo; `run()` ejecutaría en el hilo actual.
-   - Esperar con `join()` para que todos terminen antes de medir tiempo.
+ - Crear hilos según procesadores disponibles.
+ - Llamar `start()` en cada hilo (no `run()` directamente).
+ - `start()` lanza la ejecución en paralelo; `run()` ejecutaría en el hilo actual.
+ - Esperar con `join()` para que todos terminen antes de medir tiempo.
 
 4. **Comparación**:
    ```java
@@ -480,6 +480,6 @@ Versión CON concurrencia: 2.456 ms
 4. **Archivos CSV**: Todos usan análisis simple con `split(",")` e `Integer.parseInt()`. No se maneja escape de comas.
 
 5. **Pruebas**:
-   - Dieta: verificar que cubre todos los grupos y respeta límites de calorías.
-   - ABB: confirmar que el máximo es realmente el mayor valor insertado.
-   - Concurrencia: ambas matrices deben ser idénticas; la diferencia está solo en tiempo.
+ - Dieta: verificar que cubre todos los grupos y respeta límites de calorías.
+ - ABB: confirmar que el máximo es realmente el mayor valor insertado.
+ - Concurrencia: ambas matrices deben ser idénticas; la diferencia está solo en tiempo.

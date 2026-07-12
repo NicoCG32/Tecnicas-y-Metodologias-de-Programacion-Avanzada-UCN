@@ -1,5 +1,17 @@
 # Explicación Detallada - Técnicas y Metodologías de Programación Avanzada
 
+## Objetivo
+
+Explicar las decisiones recursivas y de divide y conquista utilizadas en los cuatro ejercicios, incluyendo casos base, progreso, estructura del árbol y costo computacional.
+
+## Estado de cobertura
+
+Los tres ejercicios de programación se encuentran en `src/`. El cuarto ejercicio es un ruteo manual y está resuelto en `referencia/Ej4.md`.
+
+## Diseño de la solución
+
+Cada ejercicio se mantiene en un paquete independiente para evitar colisiones entre clases `Main`. La técnica principal se expresa en un método recursivo separado del código de demostración.
+
 ## Ejercicio 1: Suma de Dígitos (Recursión)
 
 ### Problema
@@ -36,7 +48,7 @@ public static int sumaDigitos(int n) {
     if (n / 10 == 0) {
         return (n % 10);
     }
-    
+
     // Caso recursivo: sumar último dígito + recursión del resto
     int modulo = n % 10;
     return sumaDigitos(n / 10) + modulo;
@@ -47,7 +59,7 @@ public static int sumaDigitos(int n) {
 - **Caso base:** `n / 10 == 0` significa que `n` es un número de un solo dígito (0-9). Retornamos `n % 10` (el dígito mismo).
 - **Caso recursivo:** Extraemos el último dígito con `n % 10` y lo sumamos con el resultado de la recursión sobre el resto del número (`n / 10`).
 
-#### ⚠️ Nota importante - División de enteros en Java:
+#### Nota importante - División de enteros en Java:
 En Java, cuando se dividen dos números enteros (int), el resultado **descarta los decimales** automáticamente. Por ejemplo:
 - `123 / 10 = 12` (no 12.3)
 - `12 / 10 = 1` (no 1.2)
@@ -96,7 +108,7 @@ public static int multiplicarImpares(int[] arr, int inicio, int fin) {
     if (inicio > fin) {
         return 1;
     }
-    
+
     // Caso base: un solo elemento
     if (inicio == fin) {
         if (arr[inicio] % 2 == 1) {
@@ -105,10 +117,10 @@ public static int multiplicarImpares(int[] arr, int inicio, int fin) {
             return 1;
         }
     }
-    
+
     // Divide y conquista
     int mid = (inicio + fin) / 2;
-    return multiplicarImpares(arr, inicio, mid) * 
+    return multiplicarImpares(arr, inicio, mid) *
            multiplicarImpares(arr, mid + 1, fin);
 }
 ```
@@ -157,7 +169,7 @@ private Nodo insertarRec(Nodo nodo, Persona persona) {
     } else {
         String nodoRut = nodo.persona.rut;
         String personaRut = persona.rut;
-        
+
         if (nodoRut.compareTo(personaRut) > 0) {
             nodo.izquierdo = insertarRec(nodo.izquierdo, persona);
         } else {
@@ -171,10 +183,10 @@ private Nodo insertarRec(Nodo nodo, Persona persona) {
 #### Explicación:
 - **Caso base:** Si el nodo es nulo, creamos uno nuevo con la persona.
 - **Caso recursivo:** Comparamos el RUT de la persona actual con el del nuevo nodo:
-  - Si es menor, insertamos en el subárbol izquierdo.
-  - Si es mayor o igual, insertamos en el subárbol derecho.
+ - Si es menor, insertamos en el subárbol izquierdo.
+ - Si es mayor o igual, insertamos en el subárbol derecho.
 
-#### 📌 Sobre el método `compareTo()`:
+#### Sobre el método `compareTo()`:
 El método `compareTo()` es un método de la clase `String` que compara dos cadenas **lexicográficamente** (alfabéticamente):
 - Retorna un valor **negativo** si la cadena actual es menor que la cadena comparada
 - Retorna **0** si son iguales
@@ -227,12 +239,12 @@ private int sumaEdadesUnSoloHijoRec(Nodo nodo) {
     if (nodo != null) {
         // Recorrer subárbol izquierdo
         suma += sumaEdadesUnSoloHijoRec(nodo.izquierdo);
-        
+
         // Recorrer subárbol derecho
         suma += sumaEdadesUnSoloHijoRec(nodo.derecho);
-        
+
         // Verificar si este nodo tiene un solo hijo
-        if ((nodo.izquierdo == null && nodo.derecho != null) || 
+        if ((nodo.izquierdo == null && nodo.derecho != null) ||
             (nodo.izquierdo != null && nodo.derecho == null)) {
             suma += nodo.persona.edad;
         }
@@ -245,11 +257,11 @@ private int sumaEdadesUnSoloHijoRec(Nodo nodo) {
 - **Recorrido Post-orden:** Visitamos primero los subárboles izquierdo y derecho, luego verificamos el nodo actual.
 - **Condición:** Sumamos la edad solo si el nodo tiene exactamente un hijo (XOR lógico entre izquierdo y derecho).
 
-#### 📌 Operadores Lógicos en la Condición XOR:
+#### Operadores Lógicos en la Condición XOR:
 La condición utiliza operadores lógicos para verificar exactamente un solo hijo:
 
 ```java
-if ((nodo.izquierdo == null && nodo.derecho != null) || 
+if ((nodo.izquierdo == null && nodo.derecho != null) ||
     (nodo.izquierdo != null && nodo.derecho == null)) {
     suma += nodo.persona.edad;
 }
@@ -261,16 +273,16 @@ if ((nodo.izquierdo == null && nodo.derecho != null) ||
 
 **Desglose de la condición:**
 1. Primera parte: `(nodo.izquierdo == null && nodo.derecho != null)`
-   - Significa: hijo izquierdo ES nulo Y hijo derecho NO ES nulo
-   - Es decir: Solo tiene hijo derecho
+ - Significa: hijo izquierdo ES nulo Y hijo derecho NO ES nulo
+ - Es decir: Solo tiene hijo derecho
 
 2. Segunda parte: `(nodo.izquierdo != null && nodo.derecho == null)`
-   - Significa: hijo izquierdo NO ES nulo Y hijo derecho ES nulo
-   - Es decir: Solo tiene hijo izquierdo
+ - Significa: hijo izquierdo NO ES nulo Y hijo derecho ES nulo
+ - Es decir: Solo tiene hijo izquierdo
 
 3. Ambas partes conectadas con `||`:
-   - Se cumple si alguna de las dos condiciones es verdadera
-   - Conclusión: El nodo tiene exactamente UN solo hijo
+ - Se cumple si alguna de las dos condiciones es verdadera
+ - Conclusión: El nodo tiene exactamente UN solo hijo
 
 **Ejemplos:**
 ```java

@@ -26,13 +26,15 @@ Tecnicas-y-Metodologias-de-Programacion-Avanzada-UCN/
 
 Cada evaluación puede contener:
 
-- `PRUEBA.pdf` o `Prueba.pdf`: enunciado de la evaluación.
+- `PRUEBA.pdf` o bien `PRUEBA - PARTE 1.pdf` y `PRUEBA - PARTE 2.pdf`: enunciado de la evaluación.
 - Archivos `.txt`: datos de entrada usados por la solución.
 - `Solución/`: implementación Java y documentación local.
 - `Solución/src/`: código fuente.
-- `Solución/README.md`: ficha breve con estado, tipo de ejercicios y referencia a la explicación.
+- `Solución/README.md`: ficha con cobertura del enunciado, ejecución y estado verificable.
 - `Solución/referencia/`: material auxiliar o desarrollo de ejercicios, cuando existe.
-- `Solución/EXPLICACION.md` o `EXPLICACIÓN.MD`: explicación técnica detallada, cuando existe.
+- `Solución/EXPLICACIÓN.md`: explicación técnica detallada del código o del diseño pendiente.
+
+Todas las evaluaciones registradas contienen ambos documentos, incluso cuando la implementación todavía no existe. En ese caso, la explicación no simula una solución: describe el marcador actual y los algoritmos pendientes.
 
 ## Soluciones implementadas
 
@@ -40,12 +42,12 @@ Cada evaluación puede contener:
 
 | Evaluación | Ejercicios disponibles | Conceptos principales |
 | --- | --- | --- |
-| [Prueba 1 - 2025 S1](PRUEBA%201/2025%20S1/Solución/) | Suma de dígitos, multiplicación de impares, ABB y recorrido postorden. | Recursión, divide y conquista, árbol binario de búsqueda y recorridos. |
-| [Prueba 2 - 2024 S2](PRUEBA%202/2024%20S2/Solución/) | Selección de dieta, búsqueda en ABB y matriz concurrente. | Backtracking, poda, ABB, hilos, sincronización y comparación secuencial/concurrente. |
+| [Prueba 1 - 2025 S1](PRUEBA%201/2025%20S1/Solución/README.md) | Suma de dígitos, multiplicación de impares, ABB y recorrido postorden. | Recursión, divide y conquista, árbol binario de búsqueda y recorridos. |
+| [Prueba 2 - 2024 S2](PRUEBA%202/2024%20S2/Solución/README.md) | Selección de dieta, búsqueda en ABB y matriz concurrente. | Backtracking, poda, ABB, hilos, sincronización y comparación secuencial/concurrente. |
 
 ### Parciales
 
-No hay soluciones parciales registradas en este repositorio. Las demás evaluaciones conservan enunciado, estructura base y documentación mínima para implementación futura.
+No hay implementaciones parciales registradas: las restantes son bases no implementadas. Sus documentos describen con precisión qué falta.
 
 ## Evaluaciones
 
@@ -53,21 +55,21 @@ No hay soluciones parciales registradas en este repositorio. Las demás evaluaci
 
 | Periodo | Estado | Contenido principal |
 | --- | --- | --- |
-| [2025 S1](PRUEBA%201/2025%20S1/) | Completa | Recursión, divide y conquista, árbol binario de búsqueda y recorrido postorden. |
-| [2025 S1 RESILIENCIA](PRUEBA%201/2025%20S1%20RESILIENCIA/) | Base por implementar | Enunciado, referencia y estructura de solución. |
-| [2024 S2](PRUEBA%201/2024%20S2/) | Base por implementar | Enunciado y estructura de solución. |
+| [2025 S1](PRUEBA%201/2025%20S1/Solución/README.md) | Completa | Recursión, divide y conquista, árbol binario de búsqueda y recorrido postorden. |
+| [2025 S1 RESILIENCIA](PRUEBA%201/2025%20S1%20RESILIENCIA/Solución/README.md) | No implementada | Referencia parcial del primer ejercicio y diseño pendiente. |
+| [2024 S2](PRUEBA%201/2024%20S2/Solución/README.md) | No implementada | Marcador compilable y diseño pendiente. |
 
 ### Prueba 2
 
 | Periodo | Estado | Contenido principal |
 | --- | --- | --- |
-| [2024 S2](PRUEBA%202/2024%20S2/) | Completa | Backtracking para selección de dieta, ABB, y concurrencia con sincronización. |
+| [2024 S2](PRUEBA%202/2024%20S2/Solución/README.md) | Completa | Backtracking para selección de dieta, ABB, y concurrencia con sincronización. |
 
 ### RECA
 
 | Periodo | Estado | Contenido principal |
 | --- | --- | --- |
-| [2024 S2](RECA/2024%20S2/) | Base por implementar | Enunciado y estructura de solución. |
+| [2024 S2](RECA/2024%20S2/Solución/README.md) | No implementada | Marcador compilable y diseño pendiente. |
 
 ## Cómo estudiar este repositorio
 
@@ -75,7 +77,7 @@ No hay soluciones parciales registradas en este repositorio. Las demás evaluaci
 2. Identifica la técnica algorítmica principal antes de revisar el código.
 3. Revisa el `README.md` dentro de `Solución/`.
 4. Ejecuta cada programa desde `src/`.
-5. Usa `EXPLICACION.md` y `referencia/` para contrastar la implementación con el razonamiento esperado.
+5. Usa `EXPLICACIÓN.md` y `referencia/` para contrastar la implementación con el razonamiento esperado.
 
 En este curso la prioridad no es solo producir una salida correcta; también importa justificar por qué la técnica elegida resuelve el problema y cuál es su costo.
 
